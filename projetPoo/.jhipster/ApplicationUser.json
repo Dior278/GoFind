@@ -1,0 +1,57 @@
+{
+  "annotations": {
+    "changelogDate": "20240611050335"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "additionalField",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMax": "42",
+      "fieldValidateRulesMin": "42"
+    }
+  ],
+  "name": "ApplicationUser",
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "internalUser",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityName": "trajet",
+      "otherEntityRelationshipName": "applicationUser",
+      "relationshipName": "trajet",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "objetVole",
+      "otherEntityRelationshipName": "applicationUser",
+      "relationshipName": "objetVole",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "maison",
+      "otherEntityRelationshipName": "applicationUser",
+      "relationshipName": "maison",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "pieceALouer",
+      "otherEntityRelationshipName": "applicationUser",
+      "relationshipName": "pieceALouer",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

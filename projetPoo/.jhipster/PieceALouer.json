@@ -1,0 +1,47 @@
+{
+  "annotations": {
+    "changelogDate": "20240524194035"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "piece_a_louer",
+  "fields": [
+    {
+      "fieldName": "adresse",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "cheminPhotoPiece",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "disponibilite",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "prixLocation",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "proprietaire",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "PieceALouer",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "applicationUser",
+      "otherEntityRelationshipName": "pieceALouer",
+      "relationshipName": "applicationUser",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

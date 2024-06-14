@@ -1,0 +1,62 @@
+{
+  "annotations": {
+    "changelogDate": "20240524194036"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numeroTel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "motDePasse",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Utilisateur",
+  "relationships": [
+    {
+      "otherEntityName": "trajet",
+      "otherEntityRelationshipName": "utilisateur",
+      "relationshipName": "trajet",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "objetVole",
+      "otherEntityRelationshipName": "utilisateur",
+      "relationshipName": "objetVole",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "maison",
+      "otherEntityRelationshipName": "utilisateur",
+      "relationshipName": "maison",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "pieceALouer",
+      "otherEntityRelationshipName": "utilisateur",
+      "relationshipName": "pieceALouer",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
