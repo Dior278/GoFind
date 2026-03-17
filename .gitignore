@@ -1,0 +1,33 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.javadoc
+*.classpath
+*.project
+
+# Node.js
+node_modules/
+*.npm
+package-lock.json
+yarn-error.log
+
+# IDE Configurations
+.idea/
+.vscode/
+bin/
+target/
+*.iml
+*.swp
+
+# Build Artifacts
+build/
+dist/
+*.log
+*.tmp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+*~
