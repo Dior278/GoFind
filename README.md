@@ -1,75 +1,110 @@
-# GoFind
+# Setup and Installation Instructions for GoFind Full-Stack Application
 
-## Project Description
-GoFind is a robust tool designed to streamline the process of locating and managing resources efficiently. It is built to facilitate quick and easy access to essential data that users frequently need, thereby enhancing productivity and efficiency in resource management.
+## Prerequisites
+- JDK 11 or later for Java backend
+- Node.js 14 or later for TypeScript frontend
+- Docker (optional, for containerized setup)
+- PostgreSQL or another database supported by TypeORM
 
-## Features
-- **Intuitive User Interface**: A clean and user-friendly interface that ensures ease of navigation and usability.
-- **Fast Search Functionality**: Implemented with advanced algorithms to provide quick search results.
-- **Resource Management**: Tools for adding, updating, and removing resources easily.
-- **Data Export**: Users can export data in various formats for convenient sharing and reporting.
+## Project Structure
+- `backend/` - Contains Java files and Spring Boot configuration
+- `frontend/` - Contains TypeScript files and React components
+- `docker/` - Contains Docker configuration files
 
-## Tech Stack
-- **Go**: The primary language for building the application, known for its efficiency and performance.
-- **PostgreSQL**: A powerful database system to handle persistent data storage.
-- **Docker**: Ensures an isolated environment for development and deployment.
-- **React**: For building the frontend, providing a dynamic and responsive user experience.
-
-## Installation
-1. **Clone the repository**:
+## Installation Steps
+1. Clone the repository:
    ```bash
    git clone https://github.com/Dior278/GoFind.git
-   ```
-2. **Navigate to the project directory**:
-   ```bash
    cd GoFind
    ```
-3. **Install dependencies**:
+2. Navigate to the `backend` directory:
    ```bash
-   go mod tidy
+   cd backend
    ```
-4. **Setup the Database**:
-   1. Make sure PostgreSQL is installed and running.
-   2. Create a database for the application.
-   3. Update the connection string in the `config` file.
+3. Install dependencies:
+   ```bash
+   ./mvnw install
+   ```
+4. Navigate to the `frontend` directory:
+   ```bash
+   cd ../frontend
+   ```
+5. Install npm dependencies:
+   ```bash
+   npm install
+   ```
 
-## Development Guide
-- Start the server:
+## Running Instructions
+### Development
+- For backend:
   ```bash
-  go run main.go
+  cd backend
+  ./mvnw spring-boot:run
   ```
-- For frontend development, navigate to the `frontend` directory and run:
+- For frontend:
   ```bash
+  cd frontend
   npm start
   ```
 
-## Testing
-- To run the tests for the backend code, execute:
+### Production
+- Build the backend:
   ```bash
-  go test ./...
+  cd backend
+  ./mvnw clean package
   ```
-- For frontend testing, you can use:
+- Build the frontend:
   ```bash
+  cd frontend
+  npm run build
+  ```
+- Run the application (ensure database is set up):
+  ```bash
+  java -jar backend/target/goFind.jar
+  ```
+
+## Testing
+- For backend tests:
+  ```bash
+  cd backend
+  ./mvnw test
+  ```
+- For frontend tests:
+  ```bash
+  cd frontend
   npm test
   ```
 
-## Building
-- Build the Go application:
+## Build
+- To build the application for production, follow the production instructions above.
+
+## Database Setup
+1. Create a new database using PostgreSQL.
+2. Update the `application.properties` in the `backend` directory with your database credentials.
+3. Run migrations using TypeORM to set up the database schema.
+
+## Docker Information
+- A Dockerfile is provided in the `docker/` directory.
+- To build and run with Docker:
   ```bash
-  go build -o GoFind
+  docker-compose up --build
   ```
-- For production deployment, ensure you follow Docker deployment guidelines to containerize the application effectively.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for more information.
+## Available npm Scripts
+- `npm start` - Starts the development server.
+- `npm run build` - Builds the production version of the frontend.
+- `npm test` - Runs the tests for the frontend.
 
-## Contact
-For any inquiries or contributions, please reach out:
-- **GitHub**: [Dior278](https://github.com/Dior278)  
-- **Email**: dior278@example.com  
+## API Documentation
+- The API is documented using Swagger, available at `/api/docs` once the application is running.
 
----
+## Troubleshooting
+- Check the console logs for errors if the application does not start correctly.
+- Ensure your database is running and properly configured.
 
-## Last Updated
-**Date:** 2026-03-17 21:58:56 UTC  
-**By:** Dior278  
+## Contributing Guidelines
+- Please fork the repository and create a new branch for your feature or bug fix.
+- Ensure tests are written for new features.
+
+## Support Information
+- For support, please open an issue on GitHub or contact the maintainer at Dior278@example.com.
